@@ -1,0 +1,24 @@
+[package]
+name = "geo-render"
+version = "0.1.0"
+authors = ["Osspial <osspial@gmail.com>"]
+
+[dependencies]
+glutin = "0.11"
+
+[dependencies.cgmath]
+branch = "prs_merged"
+git = "https://github.com/Osspial/cgmath.git"
+
+[dependencies.cgmath-geometry]
+# git = "https://github.com/Osspial/cgmath-geometry.git"
+path = "../cgmath-geometry"
+
+[dependencies.gl_raii]
+git = "https://github.com/Osspial/gl_raii.git"
+
+[dependencies.gl_raii_macros]
+git = "https://github.com/Osspial/gl_raii.git"
+
+[patch."https://github.com/Osspial/cgmath-geometry"]
+cgmath-geometry = { path = "../cgmath-geometry" }
