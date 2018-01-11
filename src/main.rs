@@ -42,7 +42,7 @@ fn main() {
     let state = unsafe{ ContextState::new(|addr| window.context().get_proc_address(addr)) };
 
     let la = Segment::new2(0.0, 0.0, 1.0, 1.0);
-    let lb = Segment::new2(0.0, 1.0, 2.0, 0.0);
+    let lb = Segment::new2(0.0, 1.0, 1.0, 0.0);
     let inter = Into::<Option<_>>::into(la.intersect(lb)).unwrap_or(Point2::new(9.0, 9.0));
     println!("{:?}", la.intersect(lb));
 
@@ -65,15 +65,15 @@ fn main() {
         },
 
         Vertex {
-            pos: inter + Vector2::new(0.0, 0.1),
+            pos: inter + Vector2::new(0.0, 0.03),
             color: Rgb::new(Nu8(255), Nu8(255), Nu8(0))
         },
         Vertex {
-            pos: inter + Vector2::new(0.2, -0.1),
+            pos: inter + Vector2::new(0.03, -0.03),
             color: Rgb::new(Nu8(255), Nu8(255), Nu8(0))
         },
         Vertex {
-            pos: inter + Vector2::new(-0.2, -0.2),
+            pos: inter + Vector2::new(-0.03, -0.03),
             color: Rgb::new(Nu8(255), Nu8(255), Nu8(0))
         },
     ], state.clone());
